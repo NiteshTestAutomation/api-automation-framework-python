@@ -4,8 +4,8 @@ from utilities.assertions import assert_status_code, assert_json_key, validate_s
 
 @allure.feature("Login API")
 @allure.title("Validate Login API returns token")
-def test_login_api(client, base_url, login_payload):
 
+def test_login_api(client, base_url, login_payload):
     url = base_url + "/login"
     response = client.post(url, login_payload)
 
