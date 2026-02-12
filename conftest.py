@@ -1,5 +1,6 @@
 import json
 import pytest
+import os
 from utilities.api_client import APIClient
 from utilities.config_reader import get_base_url, get_object_base_url
 
@@ -25,4 +26,11 @@ def login_payload():
 @pytest.fixture
 def transfer_payload():
     with open("payloads/transfer_payload.json") as file:
+        return json.load(file)
+
+@pytest.fixture
+def addObject_payload():
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # conftest.py location
+    file_path = os.path.join(base_dir, "payloads", "add_object_payload.json")
+    with open(file_path) as file:
         return json.load(file)
