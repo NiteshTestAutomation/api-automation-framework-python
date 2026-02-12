@@ -34,3 +34,11 @@ def addObject_payload():
     file_path = os.path.join(base_dir, "payloads", "add_object_payload.json")
     with open(file_path) as file:
         return json.load(file)
+
+
+@pytest.fixture
+def updateObject_payload():
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # conftest.py location
+    file_path = os.path.join(base_dir, "payloads", "update_object_payload.json")
+    with open(file_path) as file:
+        return json.load(file)
