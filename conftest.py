@@ -1,7 +1,8 @@
 import json
 import pytest
 from utilities.api_client import APIClient
-from utilities.config_reader import get_base_url
+from utilities.config_reader import get_base_url, get_object_base_url
+
 
 @pytest.fixture(scope="session")
 def client():
@@ -10,6 +11,11 @@ def client():
 @pytest.fixture(scope="session")
 def base_url():
     return get_base_url()
+
+@pytest.fixture(scope="session")
+def object_base_url():
+    return get_object_base_url()
+
 
 @pytest.fixture
 def login_payload():
